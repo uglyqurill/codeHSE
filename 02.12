@@ -1,0 +1,77 @@
+Номер 1
+def my_min(a, b, c, d):
+  min0 = min(min(a,b),min(c,d))
+  return min0
+
+print("Введите 4 числа для поиска минимального среди них")
+
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+print(my_min(a,b,c,d))
+
+Номер 2
+
+def my_nod(a):
+  if (a != 1):
+    for i in range(1,a):
+      if (a % i == 0):
+        maxd = i
+      if (maxd == 1):
+        maxd = a
+  else:
+    maxd = 1
+  return maxd
+
+print("Введите число для поиска НОД")
+
+a = int(input())
+print(my_nod(a))
+
+Номер 3
+
+a=int(input())
+b=int(input())
+
+def my_idk(a,b):
+  if (b>=0):
+    while b!=0:
+      a=a+1
+      b=b-1
+      my_idk(a,b)
+  elif (b<0):
+    while b!=0:
+      a=a-1
+      b=b+1
+      my_idk(a,b)
+  return(a)
+
+print(my_idk(a,b))
+
+Номер 4
+
+def my_pow(x, n):
+    if n == 0:
+        return 1
+    if n < 0:
+        return 1 / my_pow(x, -n)
+    if n % 2 == 0:
+        return my_pow(x, n // 2) * my_pow(x, n // 2)
+    else:
+        return my_pow(x, n - 1) * x
+
+x = int(input())
+n = int(input())
+print(my_pow(x, n))
+
+Номер 5
+
+array = ["Ivan Ivanov 18", "Fedor Fedorov 17", "Kirill Kirillov 20"]
+array = sorted(array, key = lambda x: int(x[-2]))
+minname = array[0]
+
+for i in range(0, len(array) - 1):
+  if array[i] < minname:
+    minname = array[i]
+print(minname)
